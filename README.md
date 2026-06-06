@@ -1,6 +1,6 @@
-# Project Arabesque — NBS IT Automation System
+# Project Arabesque — Microsoft 365 Student IT Automation
 
-### Microsoft 365 · Power Automate · SharePoint Online · Microsoft Forms · Zero Vendor Contracts
+### Microsoft 365 · Power Automate · SharePoint Online · Microsoft Forms · Low-Code IT Automation
 
 **Md Rahat Islam Anik · Self-Directed Case Study · 2025**
 
@@ -10,16 +10,18 @@
 
 ---
 
-| 3 SharePoint Systems Built | 2 Automated Cloud Flows | 4 Email Automations Live | 0 Vendor Contracts Required |
+| 3 SharePoint Systems Built | 2 Automated Cloud Flows | 4 Email Templates Tested | No New Vendor Platform |
 |:---:|:---:|:---:|:---:|
 
 ---
 
 ## The Brief
 
-Canada's National Ballet School is one of North America's only institutions offering elite dance training, full academic programming, and on-campus residence — all in one place. International boarding students arrive every semester from around the world. Each one needs a Microsoft 365 account, a configured device, network access, and residence coordination. Without automation, that's a manual checklist for a team of two.
+Project Arabesque is a self-directed Microsoft 365 automation case study based on a performing-arts school scenario. International boarding students arrive every semester from around the world. Each one needs a Microsoft 365 account, a configured device, network access, and residence coordination. Without automation, that's a manual checklist for a small IT team.
 
-**Project Arabesque** is an end-to-end IT automation system for international student onboarding and offboarding — built entirely on tools NBS already owns, deployable on day one.
+The project models an end-to-end IT automation system for international student onboarding and offboarding using Microsoft 365 services that many education organizations already license.
+
+> Scope note: this repository is a portfolio case study, not a claim of production deployment or official affiliation with any school.
 
 ---
 
@@ -32,18 +34,28 @@ Canada's National Ballet School is one of North America's only institutions offe
 This isn't a tech company. When something breaks the morning of a performance, or a student arrives and their account isn't ready, it matters in a way that a missed meeting notification never does.
 
 **The Tooling Problem**
-The solution shouldn't require a $40,000 enterprise platform or a vendor contract. NBS already pays for Microsoft 365. The tools to solve this are already in the building.
+The solution shouldn't require a $40,000 enterprise platform or a vendor contract when the workflow can be covered with existing Microsoft 365 services.
 
 **The International Variable**
-Students arrive from Japan, Brazil, South Korea, the UK — different time zones, language needs, arrival dates. The onboarding process needs to work without manual coordination every time.
+Students arrive from Japan, Brazil, South Korea, the UK — different time zones, language needs, arrival dates. The onboarding process needs to reduce manual coordination and keep the IT team working from one source of truth.
 
 ---
 
 ## The Solution
 
-> Three systems. Two flows. Zero manual steps.
+> Three systems. Two flows. Reduced manual coordination.
 
-Project Arabesque is a Microsoft 365 IT Operations Hub built entirely on tools NBS already owns. No new software. No vendor contract. No training required for staff who submit requests.
+Project Arabesque is a Microsoft 365 IT Operations Hub built around SharePoint Online, Microsoft Forms, Power Automate, and Office 365 Outlook. It demonstrates how intake, tracking, email notifications, and device assignment records can work together without adding a separate ticketing or onboarding platform.
+
+### Evidence Status
+
+| Area | Status | Evidence |
+|---|---|---|
+| SharePoint lists | Configured in lab | Screenshots show onboarding tracker, offboarding log, and asset inventory structure |
+| Onboarding automation | Built and tested with sample records | Screenshots show Forms intake, SharePoint tracking, and student/IT notification emails |
+| Offboarding automation | Built and tested with sample records | Screenshots show flow trigger, student confirmation, and IT checklist email |
+| Production deployment | Not claimed | This is a self-directed portfolio case study |
+| Physical device testing | Not included | Device assignment is tracked as SharePoint data, not validated through Intune enrollment |
 
 ### Onboarding Flow
 
@@ -52,7 +64,7 @@ Microsoft Forms          Power Automate           Outputs
 ─────────────────        ──────────────           ──────────────────────
 Student submits    →     Cloud flow          →    SharePoint Tracker
 intake request           triggered                Welcome Email → Student
-                         automatically            IT Alert Checklist
+                         on submission            IT Alert Checklist
                                                   Asset Inventory Log
 ```
 
@@ -70,17 +82,17 @@ by IT team               triggered                Student Confirmation
 
 ## What Was Built
 
-### Phase 1 — The NBS IT Portal
+### Phase 1 — IT Operations Portal
 
-Three SharePoint lists form the operational backbone — a live onboarding tracker, an offboarding log, and a device asset inventory. Every student, every ticket, every device: one portal.
+Three SharePoint lists form the operational backbone — an onboarding tracker, an offboarding log, and a device asset inventory. Every student, every request, every device assignment: one portal.
 
-- **Student Onboarding Tracker** — live data showing student name, country of origin, arrival date, account status, device assignment, and onboarding completion
+- **Student Onboarding Tracker** — sample data showing student name, country of origin, arrival date, account status, device assignment, and onboarding completion
 - **Offboarding Log** — departure records with account disable status, license reclaim confirmation, and audit trail
 - **IT Asset Inventory** — device assignment tracking across the student body
 
 ### Phase 2 — Automated Onboarding Flow
 
-When a new student intake form is submitted via Microsoft Forms, Power Automate triggers immediately — no human intervention required. The flow:
+When a new student intake form is submitted via Microsoft Forms, Power Automate triggers the onboarding workflow. The flow:
 
 - Creates and populates the student record in the SharePoint Onboarding Tracker
 - Sends a personalized welcome email to the student with account and access details
@@ -89,7 +101,7 @@ When a new student intake form is submitted via Microsoft Forms, Power Automate 
 
 ### Phase 3 — Automated Offboarding Flow
 
-When IT logs a student departure in SharePoint, the offboarding flow triggers automatically:
+When IT logs a student departure in SharePoint, the offboarding flow runs from the new offboarding item:
 
 - Generates an IT Offboard Checklist covering account disable, license reclaim, and device return
 - Sends a confirmation email to the departing student
@@ -106,7 +118,7 @@ When IT logs a student departure in SharePoint, the offboarding flow triggers au
 | Data & Tracking | SharePoint Online (3 Lists) |
 | Notifications | Office 365 Outlook |
 | Collaboration | Microsoft Teams |
-| Platform | Microsoft 365 (existing NBS licensing) |
+| Platform | Microsoft 365 |
 
 ---
 
@@ -122,12 +134,22 @@ The full interactive case study — covering the problem, solution architecture,
 
 **[rahatislamanik-spec.github.io/Project-Arabesque](https://rahatislamanik-spec.github.io/Project-Arabesque)**
 
+Supporting evidence is mapped in [docs/evidence-map.md](docs/evidence-map.md).
+
+## Limitations
+
+- This is a self-directed lab and documentation project, not a verified production rollout.
+- Screenshots use sample student records and demonstration workflow data.
+- Device lifecycle tracking is represented in SharePoint; it does not prove physical device enrollment or Intune compliance.
+- The workflows demonstrate notification and tracking logic, not automated Entra ID account creation through Graph API.
+- A production rollout would need approval workflow design, exception handling, audit retention, data privacy review, and break-glass operating procedures.
+
 ---
 
 ## Author
 
 **Md Rahat Islam Anik**
-Cloud Computing & Network Administration · George Brown College · May 2026
+Microsoft 365 · IT Automation · Support Operations Portfolio
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat&logo=linkedin)](https://linkedin.com/in/rahatislamanik)
 [![GitHub](https://img.shields.io/badge/GitHub-Portfolio-181717?style=flat&logo=github)](https://github.com/rahatislamanik-spec)
