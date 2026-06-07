@@ -65,23 +65,68 @@ This swimlane shows how Microsoft Forms, Power Automate, SharePoint Online, noti
 
 [View interactive HTML version](https://rahatislamanik-spec.github.io/Project-Arabesque/docs/onboarding-offboarding-swimlane.html)
 
-```
-Microsoft Forms          Power Automate           Outputs
-─────────────────        ──────────────           ──────────────────────
-Student submits    →     Cloud flow          →    SharePoint Tracker
-intake request           triggered                Welcome Email → Student
-                         on submission            IT Alert Checklist
-                                                  Asset Inventory Log
+```mermaid
+flowchart LR
+    subgraph Forms["📋 Microsoft Forms"]
+        F1["Student submits\nIntake Request"]
+    end
+
+    subgraph PA["⚡ Power Automate"]
+        PA1["Cloud Flow\nTriggered on\nForm Submission"]
+    end
+
+    subgraph Outputs["📤 Outputs"]
+        O1["📊 SharePoint\nOnboarding Tracker"]
+        O2["📧 Welcome Email\n→ Student"]
+        O3["🔔 IT Alert\nChecklist"]
+        O4["🖥️ Asset Inventory\nLog Entry"]
+    end
+
+    F1 --> PA1
+    PA1 --> O1
+    PA1 --> O2
+    PA1 --> O3
+    PA1 --> O4
+
+    classDef forms fill:#E3F2FD,stroke:#1976D2,stroke-width:2px,color:#000
+    classDef automate fill:#F3E5F5,stroke:#7B1FA2,stroke-width:2px,color:#000
+    classDef output fill:#E8F5E9,stroke:#388E3C,stroke-width:2px,color:#000
+
+    class F1 forms
+    class PA1 automate
+    class O1,O2,O3,O4 output
 ```
 
 ### Offboarding Flow
 
-```
-SharePoint Item          Power Automate           Outputs
-─────────────────        ──────────────           ──────────────────────
-Departure logged   →     Offboarding flow    →    IT Offboard Checklist
-by IT team               triggered                Student Confirmation
-                                                  Offboarding Log Updated
+```mermaid
+flowchart LR
+    subgraph SP["📊 SharePoint"]
+        S1["IT team logs\nStudent Departure"]
+    end
+
+    subgraph PA["⚡ Power Automate"]
+        PA2["Offboarding Flow\nTriggered on\nNew List Item"]
+    end
+
+    subgraph Outputs["📤 Outputs"]
+        O5["🔔 IT Offboard\nChecklist Email"]
+        O6["📧 Student\nDeparture Confirmation"]
+        O7["📋 Offboarding Log\nUpdated"]
+    end
+
+    S1 --> PA2
+    PA2 --> O5
+    PA2 --> O6
+    PA2 --> O7
+
+    classDef sharepoint fill:#FFF3E0,stroke:#F57C00,stroke-width:2px,color:#000
+    classDef automate fill:#F3E5F5,stroke:#7B1FA2,stroke-width:2px,color:#000
+    classDef output fill:#FCE4EC,stroke:#C2185B,stroke-width:2px,color:#000
+
+    class S1 sharepoint
+    class PA2 automate
+    class O5,O6,O7 output
 ```
 
 ---
