@@ -128,6 +128,17 @@ When IT logs a student departure in SharePoint, the offboarding flow runs from t
 
 ---
 
+## Technical Artifacts
+
+| Artifact | Purpose |
+|---|---|
+| [docs/sharepoint-schema.md](docs/sharepoint-schema.md) | Full column schemas for all 3 SharePoint lists — types, required fields, indexed columns, views |
+| [docs/flow-logic.md](docs/flow-logic.md) | Step-by-step Power Automate flow documentation — triggers, actions, conditions, error handling |
+| [scripts/New-M365OnboardingUser.ps1](scripts/New-M365OnboardingUser.ps1) | PowerShell script using Microsoft Graph API to create M365 account, assign license, add to groups |
+| [docs/images/onboarding-offboarding-swimlane.svg](docs/images/onboarding-offboarding-swimlane.svg) | Visual swimlane showing full onboarding and offboarding lifecycle |
+
+---
+
 ## Skills Demonstrated
 
 `Power Automate` · `Cloud Flow Design` · `SharePoint Online` · `Microsoft Forms` · `IT Process Automation` · `Low-Code Integration` · `IT Asset Management` · `Onboarding Workflow Design` · `Microsoft 365 Administration` · `Enterprise IT Operations`
