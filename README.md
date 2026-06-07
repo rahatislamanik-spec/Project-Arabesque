@@ -1,8 +1,8 @@
-# Project Arabesque — Microsoft 365 Student IT Automation
+# Project Arabesque — Microsoft 365 IT Automation
 
 ### Microsoft 365 · Power Automate · SharePoint Online · Microsoft Forms · Low-Code IT Automation
 
-**Md Rahat Islam Anik · Self-Directed Case Study · 2025**
+**Md Rahat Islam Anik · Microsoft 365 Automation Case Study · 2026**
 
 [![Live Case Study](https://img.shields.io/badge/Live%20Case%20Study-View%20Now-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)](https://rahatislamanik-spec.github.io/Project-Arabesque)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-rahatislamanik-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/rahatislamanik)
