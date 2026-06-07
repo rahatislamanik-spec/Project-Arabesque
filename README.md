@@ -63,7 +63,7 @@ Project Arabesque is a Microsoft 365 IT Operations Hub built around SharePoint O
 
 This swimlane shows how Microsoft Forms, Power Automate, SharePoint Online, notifications, and IT review work together across the onboarding and offboarding lifecycle.
 
-[View interactive HTML version](docs/onboarding-offboarding-swimlane.html)
+[View interactive HTML version](https://rahatislamanik-spec.github.io/Project-Arabesque/docs/onboarding-offboarding-swimlane.html)
 
 ```
 Microsoft Forms          Power Automate           Outputs
