@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Arabesque Onboarding and Offboarding Swimlane</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { min-height: 100vh; padding: 32px; background: #f5f7fb; color: #172033; font-family: "Segoe UI", Calibri, Arial, sans-serif; }
+        .container { max-width: 1180px; margin: 0 auto; padding: 34px; background: #fff; border: 1px solid #d8e0ea; border-radius: 10px; box-shadow: 0 16px 42px rgba(23,32,51,.12); }
+        .back-link { display: inline-block; margin-bottom: 22px; color: #7a3f8f; font-size: 14px; font-weight: 700; text-decoration: none; }
+        header { margin-bottom: 28px; text-align: center; }
+        h1 { margin-bottom: 10px; font-size: 30px; line-height: 1.2; }
+        .subtitle { color: #53647c; line-height: 1.5; }
+        .note { max-width: 860px; margin: 18px auto 0; padding: 14px 16px; background: #fbf8fc; border: 1px solid #e3d5e8; border-left: 4px solid #7a3f8f; border-radius: 6px; color: #36455c; font-size: 14px; line-height: 1.5; text-align: left; }
+        .swimlane { display: grid; grid-template-columns: 180px repeat(4,minmax(0,1fr)); gap: 10px; margin-top: 26px; align-items: stretch; }
+        .cell { padding: 14px; border: 1px solid #d8e0ea; border-radius: 8px; background: #fff; min-height: 92px; font-size: 13px; line-height: 1.4; }
+        .head { background: #172033; color: #fff; font-weight: 800; text-align: center; display: grid; place-items: center; }
+        .lane { background: #fbf8fc; color: #43214f; font-weight: 800; display: grid; place-items: center; text-align: center; }
+        .step { border: 2px solid #9b6cad; box-shadow: 0 3px 10px rgba(122,63,143,.10); }
+        .step strong { display: block; margin-bottom: 5px; color: #172033; font-size: 14px; }
+        .auto { border-color: #3d9987; background: #f1fbf8; }
+        .review { border-color: #d5a51d; background: #fff9e8; }
+        @media (max-width: 900px) { body { padding: 18px; } .container { padding: 24px; } h1 { font-size: 24px; } .swimlane { grid-template-columns: 1fr; } .head { display: none; } .lane { min-height: 52px; } }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <a class="back-link" href="../README.md">Back to Project Arabesque</a>
+        <header>
+            <h1>Onboarding and Offboarding Swimlane</h1>
+            <p class="subtitle">Microsoft 365 workflow view across student, IT, SharePoint, Power Automate, and notification outputs</p>
+            <p class="note">This diagram summarizes the lab workflow design. It does not claim production deployment, physical device enrollment, or automated Entra ID account creation.</p>
+        </header>
+
+        <section class="swimlane" aria-label="Project Arabesque workflow swimlane">
+            <div class="head">Actor</div><div class="head">Intake</div><div class="head">Automation</div><div class="head">Tracking</div><div class="head">Notification / Closure</div>
+            <div class="lane">Student</div><div class="cell step"><strong>Submit intake form</strong>Student provides arrival and onboarding details.</div><div class="cell"></div><div class="cell"></div><div class="cell step"><strong>Receive email</strong>Welcome or departure confirmation message.</div>
+            <div class="lane">Power Automate</div><div class="cell"></div><div class="cell step auto"><strong>Trigger cloud flow</strong>Runs after form submission or SharePoint item creation.</div><div class="cell step auto"><strong>Write workflow data</strong>Updates tracker, offboarding log, and asset inventory fields.</div><div class="cell step auto"><strong>Send messages</strong>Student email plus IT checklist alert.</div>
+            <div class="lane">SharePoint Online</div><div class="cell step"><strong>Store request data</strong>Forms and workflow data feed SharePoint lists.</div><div class="cell"></div><div class="cell step review"><strong>Single source of truth</strong>Onboarding tracker, offboarding log, asset inventory.</div><div class="cell"></div>
+            <div class="lane">IT Team</div><div class="cell"></div><div class="cell step review"><strong>Review checklist</strong>Account, access, device, residence coordination tasks.</div><div class="cell step review"><strong>Update status</strong>Track account readiness, device assignment, return, or license reclaim.</div><div class="cell step review"><strong>Close request</strong>Manual validation and exception handling remain required.</div>
+        </section>
+    </main>
+</body>
+</html>

@@ -59,6 +59,8 @@ Project Arabesque is a Microsoft 365 IT Operations Hub built around SharePoint O
 
 ### Onboarding Flow
 
+For a role-by-role process view, see the [onboarding and offboarding swimlane diagram](docs/onboarding-offboarding-swimlane.html).
+
 ```
 Microsoft Forms          Power Automate           Outputs
 ─────────────────        ──────────────           ──────────────────────
