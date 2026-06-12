@@ -1,4 +1,5 @@
 # Project Arabesque — Microsoft 365 IT Automation
+> **Status:** Portfolio Complete — v1.0
 
 ### Microsoft 365 · Power Automate · SharePoint Online · Microsoft Forms · Low-Code IT Automation
 
