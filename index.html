@@ -284,6 +284,101 @@
 
   .arch-svg { width: 100%; max-width: 900px; display: block; margin: 0 auto; }
 
+  /* ── LIVE FORMS SECTION ── */
+  .live-forms-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2.5rem;
+  }
+
+  .live-form-card {
+    padding: 2rem;
+    border: 1px solid rgba(201,168,76,0.3);
+    background: linear-gradient(135deg, var(--navy-mid), var(--navy));
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+
+  .live-form-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-2px);
+  }
+
+  .live-form-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gold);
+  }
+
+  .live-form-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.75rem;
+    background: rgba(201,168,76,0.15);
+    border: 1px solid rgba(201,168,76,0.4);
+    border-radius: 1rem;
+    font-size: 0.68rem;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .live-dot {
+    width: 6px;
+    height: 6px;
+    background: #4CAF50;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(0.85); }
+  }
+
+  .live-form-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+  }
+
+  .live-form-card p {
+    font-size: 0.9rem;
+    color: var(--white-dim);
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
+  }
+
+  .live-form-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.5rem;
+    background: var(--gold);
+    color: var(--navy);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: all 0.3s;
+  }
+
+  .live-form-link:hover {
+    background: var(--gold-light);
+    transform: translateY(-1px);
+  }
+
   /* ── FLOW SECTIONS ── */
   .flow-block {
     margin: 3rem 0;
@@ -471,6 +566,68 @@
     letter-spacing: 0.03em;
   }
 
+  /* ── TECHNICAL ARTIFACTS ── */
+  .artifacts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+  }
+
+  .artifact-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 1.5rem;
+    border: 1px solid var(--white-ghost);
+    text-decoration: none;
+    color: var(--white);
+    transition: all 0.3s;
+    background: var(--white-ghost);
+  }
+
+  .artifact-card:hover {
+    border-color: rgba(201,168,76,0.4);
+    background: var(--gold-dim);
+    transform: translateX(3px);
+  }
+
+  .artifact-icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .artifact-name {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.82rem;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 0.35rem;
+    letter-spacing: 0.03em;
+  }
+
+  .artifact-desc {
+    font-size: 0.88rem;
+    color: var(--white-dim);
+    line-height: 1.55;
+  }
+
+  .artifact-arrow {
+    color: var(--gold);
+    font-size: 1rem;
+    margin-left: auto;
+    flex-shrink: 0;
+    align-self: center;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+
+  .artifact-card:hover .artifact-arrow {
+    opacity: 1;
+    transform: translateX(3px);
+  }
+
   /* ── REFLECTION ── */
   .reflection-block {
     padding: 3.5rem;
@@ -620,6 +777,8 @@
     .problem-grid { grid-template-columns: 1fr; }
     .email-grid { grid-template-columns: 1fr; }
     .impact-grid { grid-template-columns: 1fr; }
+    .live-forms-grid { grid-template-columns: 1fr; }
+    .artifacts-grid { grid-template-columns: 1fr; }
     footer { grid-template-columns: 1fr; padding: 3rem 1.5rem; }
   }
 </style>
@@ -633,7 +792,9 @@
     <li><a href="#problem">Problem</a></li>
     <li><a href="#solution">Solution</a></li>
     <li><a href="#flows">The Flows</a></li>
+    <li><a href="#live-forms">Live Forms</a></li>
     <li><a href="#impact">Impact</a></li>
+    <li><a href="#artifacts">Artifacts</a></li>
     <li><a href="#contact">Connect</a></li>
   </ul>
 </nav>
@@ -768,7 +929,7 @@
       <line x1="30" y1="175" x2="830" y2="175" stroke="rgba(248,245,238,0.08)" stroke-width="1"/>
       <text x="430" y="195" fill="#C9A84C" font-size="11" text-anchor="middle" letter-spacing="3" font-weight="600">OFFBOARDING FLOW</text>
 
-      <!-- Offboarding Form -->
+      <!-- Offboarding trigger -->
       <rect x="30" y="210" width="140" height="60" rx="2" fill="#1a3357" stroke="#C9A84C" stroke-width="1"/>
       <text x="100" y="235" fill="#F8F5EE" font-size="11" text-anchor="middle" font-weight="500">SharePoint Item</text>
       <text x="100" y="252" fill="#C9A84C" font-size="9.5" text-anchor="middle">Departure logged</text>
@@ -887,7 +1048,7 @@
 
     <div class="screenshot-wrap fade-in" data-label="Power Automate · Offboarding Flow Trigger">
       <img src="assets/screenshots/arabesque_06_offboarding_flow.png" alt="Student Departure Offboarding Power Automate flow configuration"/>
-      <div class="screenshot-caption">Student Departure & Offboarding flow · Trigger: SharePoint item created in Student Offboarding Log</div>
+      <div class="screenshot-caption">Student Departure &amp; Offboarding flow · Trigger: SharePoint item created in Student Offboarding Log</div>
     </div>
 
     <div class="email-grid">
@@ -903,56 +1064,142 @@
   </div>
 </section>
 
-<!-- IMPACT -->
-<div class="band" id="impact">
+<!-- LIVE FORMS -->
+<div class="band" id="live-forms">
   <section>
-    <p class="section-label">Business Impact</p>
-    <h2 class="section-title fade-in">What this actually <em>saves.</em></h2>
-    <p class="section-body fade-in">Every manual onboarding can take an IT team member approximately 45 minutes end-to-end. Every offboarding, around 30 minutes. With 20–30 international students per semester, the model shows meaningful time savings and fewer missed handoff steps.</p>
+    <p class="section-label">Live Workflow Demonstrations</p>
+    <h2 class="section-title fade-in">The forms are <em>live.</em><br>Try them now.</h2>
+    <p class="section-body fade-in">These are the actual Microsoft Forms connected to the Power Automate workflows described in this case study. Submitting either form triggers the intake pipeline — data routing, SharePoint tracking, and email notifications — exactly as designed.</p>
 
-    <div class="impact-grid">
-      <div class="impact-card fade-in">
-        <div class="impact-num">45<span style="font-size:1.5rem">min</span></div>
-        <div class="impact-label">Estimated time saved per student onboarding from intake submission to IT alert</div>
+    <div class="live-forms-grid">
+      <div class="live-form-card fade-in">
+        <div class="live-form-badge">
+          <span class="live-dot"></span>
+          Live · Microsoft Forms
+        </div>
+        <h4>International Student IT Onboarding Request</h4>
+        <p>The intake form that triggers the onboarding automation — account provisioning, device assignment tracking, student welcome email, and IT checklist generation.</p>
+        <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=euv6MawKU0CWaC8szfWKu3Yg7c4vlClPiG39TcXeuiNUMlU0T0ZHM0VYQ1VVR01ET0czNllMU0xZUi4u"
+           target="_blank" rel="noopener noreferrer" class="live-form-link">
+          Open Onboarding Form ↗
+        </a>
       </div>
-      <div class="impact-card fade-in">
-        <div class="impact-num">~20<span style="font-size:1.5rem">hr</span></div>
-        <div class="impact-label">Recovered per semester for a 25-student cohort — time better spent on infrastructure</div>
-      </div>
-      <div class="impact-card fade-in">
-        <div class="impact-num">1<span style="font-size:1.5rem">log</span></div>
-        <div class="impact-label">Workflow audit trail coverage for lifecycle events tracked in SharePoint</div>
-      </div>
-      <div class="impact-card fade-in">
-        <div class="impact-num">$0</div>
-        <div class="impact-label">New software cost — built entirely on existing Microsoft 365 infrastructure</div>
-      </div>
-      <div class="impact-card fade-in">
-        <div class="impact-num">2</div>
-        <div class="impact-label">Power Automate flows built and tested with sample onboarding and offboarding data</div>
-      </div>
-      <div class="impact-card fade-in">
-        <div class="impact-num">3</div>
-        <div class="impact-label">SharePoint systems configured — tracker, log, and asset inventory in the IT Operations Portal</div>
+
+      <div class="live-form-card fade-in">
+        <div class="live-form-badge">
+          <span class="live-dot"></span>
+          Live · Microsoft Forms
+        </div>
+        <h4>International Student IT Offboarding Request</h4>
+        <p>The departure form that triggers the offboarding workflow — account deactivation tracking, device recovery, access removal, and lifecycle documentation in SharePoint.</p>
+        <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=euv6MawKU0CWaC8szfWKu3Yg7c4vlClPiG39TcXeuiNUNk9aNVVESTMzWFIxVFJUQ0xHM1VWTkVaWS4u"
+           target="_blank" rel="noopener noreferrer" class="live-form-link">
+          Open Offboarding Form ↗
+        </a>
       </div>
     </div>
   </section>
 </div>
 
+<!-- IMPACT -->
+<section id="impact">
+  <p class="section-label">Business Impact</p>
+  <h2 class="section-title fade-in">What this actually <em>saves.</em></h2>
+  <p class="section-body fade-in">Every manual onboarding can take an IT team member approximately 45 minutes end-to-end. Every offboarding, around 30 minutes. With 20–30 international students per semester, the model shows meaningful time savings and fewer missed handoff steps.</p>
+
+  <div class="impact-grid">
+    <div class="impact-card fade-in">
+      <div class="impact-num">45<span style="font-size:1.5rem">min</span></div>
+      <div class="impact-label">Estimated time saved per student onboarding from intake submission to IT alert</div>
+    </div>
+    <div class="impact-card fade-in">
+      <div class="impact-num">~20<span style="font-size:1.5rem">hr</span></div>
+      <div class="impact-label">Recovered per semester for a 25-student cohort — time better spent on infrastructure</div>
+    </div>
+    <div class="impact-card fade-in">
+      <div class="impact-num">1<span style="font-size:1.5rem">log</span></div>
+      <div class="impact-label">Workflow audit trail coverage for lifecycle events tracked in SharePoint</div>
+    </div>
+    <div class="impact-card fade-in">
+      <div class="impact-num">$0</div>
+      <div class="impact-label">New software cost — built entirely on existing Microsoft 365 infrastructure</div>
+    </div>
+    <div class="impact-card fade-in">
+      <div class="impact-num">2</div>
+      <div class="impact-label">Power Automate flows built and tested with sample onboarding and offboarding data</div>
+    </div>
+    <div class="impact-card fade-in">
+      <div class="impact-num">3</div>
+      <div class="impact-label">SharePoint systems configured — tracker, log, and asset inventory in the IT Operations Portal</div>
+    </div>
+  </div>
+</section>
+
 <!-- TECH STACK -->
-<section>
-  <p class="section-label">Technical Stack</p>
-  <h2 class="section-title fade-in">Built on what <em>you already own.</em></h2>
-  <p class="section-body fade-in">No new vendors. No new licenses. Every component of Project Arabesque is modeled with Microsoft 365 services that many education organizations already administer.</p>
-  <div class="stack-grid">
-    <div class="stack-item fade-in"><span class="stack-icon">📋</span><span class="stack-name">Microsoft Forms</span></div>
-    <div class="stack-item fade-in"><span class="stack-icon">⚡</span><span class="stack-name">Power Automate</span></div>
-    <div class="stack-item fade-in"><span class="stack-icon">📂</span><span class="stack-name">SharePoint Online</span></div>
-    <div class="stack-item fade-in"><span class="stack-icon">📧</span><span class="stack-name">Office 365 Outlook</span></div>
-    <div class="stack-item fade-in"><span class="stack-icon">💬</span><span class="stack-name">Microsoft Teams</span></div>
-    <div class="stack-item fade-in"><span class="stack-icon">☁️</span><span class="stack-name">Microsoft 365 Cloud</span></div>
-    <div class="stack-item fade-in"><span class="stack-icon">🔒</span><span class="stack-name">Entra ID (M365)</span></div>
-    <div class="stack-item fade-in"><span class="stack-icon">📊</span><span class="stack-name">Low-Code / API Logic</span></div>
+<div class="band">
+  <section>
+    <p class="section-label">Technical Stack</p>
+    <h2 class="section-title fade-in">Built on what <em>you already own.</em></h2>
+    <p class="section-body fade-in">No new vendors. No new licenses. Every component of Project Arabesque is modeled with Microsoft 365 services that many education organizations already administer.</p>
+    <div class="stack-grid">
+      <div class="stack-item fade-in"><span class="stack-icon">📋</span><span class="stack-name">Microsoft Forms</span></div>
+      <div class="stack-item fade-in"><span class="stack-icon">⚡</span><span class="stack-name">Power Automate</span></div>
+      <div class="stack-item fade-in"><span class="stack-icon">📂</span><span class="stack-name">SharePoint Online</span></div>
+      <div class="stack-item fade-in"><span class="stack-icon">📧</span><span class="stack-name">Office 365 Outlook</span></div>
+      <div class="stack-item fade-in"><span class="stack-icon">💬</span><span class="stack-name">Microsoft Teams</span></div>
+      <div class="stack-item fade-in"><span class="stack-icon">☁️</span><span class="stack-name">Microsoft 365 Cloud</span></div>
+      <div class="stack-item fade-in"><span class="stack-icon">🔒</span><span class="stack-name">Entra ID (M365)</span></div>
+      <div class="stack-item fade-in"><span class="stack-icon">📊</span><span class="stack-name">Low-Code / API Logic</span></div>
+    </div>
+  </section>
+</div>
+
+<!-- TECHNICAL ARTIFACTS -->
+<section id="artifacts">
+  <p class="section-label">Technical Artifacts</p>
+  <h2 class="section-title fade-in">Documentation built<br>for <em>real administrators.</em></h2>
+  <p class="section-body fade-in">Every design decision in this project is documented. The artifacts below cover SharePoint schema design, Power Automate flow logic, PowerShell provisioning, and visual lifecycle diagrams — the same depth expected in a production environment.</p>
+
+  <div class="artifacts-grid">
+    <a href="https://github.com/rahatislamanik-spec/Project-Arabesque/blob/main/docs/sharepoint-schema.md"
+       target="_blank" rel="noopener noreferrer" class="artifact-card fade-in">
+      <span class="artifact-icon">📂</span>
+      <div>
+        <div class="artifact-name">docs/sharepoint-schema.md</div>
+        <div class="artifact-desc">Full column schemas for all 3 SharePoint lists — field types, required columns, indexed columns, and configured views.</div>
+      </div>
+      <span class="artifact-arrow">→</span>
+    </a>
+
+    <a href="https://github.com/rahatislamanik-spec/Project-Arabesque/blob/main/docs/flow-logic.md"
+       target="_blank" rel="noopener noreferrer" class="artifact-card fade-in">
+      <span class="artifact-icon">⚡</span>
+      <div>
+        <div class="artifact-name">docs/flow-logic.md</div>
+        <div class="artifact-desc">Step-by-step Power Automate flow documentation — triggers, actions, conditions, dynamic content mapping, and error handling.</div>
+      </div>
+      <span class="artifact-arrow">→</span>
+    </a>
+
+    <a href="https://github.com/rahatislamanik-spec/Project-Arabesque/blob/main/scripts/New-M365OnboardingUser.ps1"
+       target="_blank" rel="noopener noreferrer" class="artifact-card fade-in">
+      <span class="artifact-icon">🖥️</span>
+      <div>
+        <div class="artifact-name">scripts/New-M365OnboardingUser.ps1</div>
+        <div class="artifact-desc">PowerShell script using Microsoft Graph API to create M365 accounts, assign licenses, and add users to security groups.</div>
+      </div>
+      <span class="artifact-arrow">→</span>
+    </a>
+
+    <a href="https://rahatislamanik-spec.github.io/Project-Arabesque/docs/onboarding-offboarding-swimlane.html"
+       target="_blank" rel="noopener noreferrer" class="artifact-card fade-in">
+      <span class="artifact-icon">🗺️</span>
+      <div>
+        <div class="artifact-name">Onboarding &amp; Offboarding Swimlane</div>
+        <div class="artifact-desc">Interactive HTML swimlane showing the full student lifecycle — Forms intake through SharePoint audit trail across both flows.</div>
+      </div>
+      <span class="artifact-arrow">→</span>
+    </a>
   </div>
 </section>
 
@@ -992,10 +1239,10 @@
         </div>
         <span class="portfolio-link-arrow">→</span>
       </a>
-      <a href="https://github.com/rahatislamanik-spec/Cafe-Nimbus" target="_blank" rel="noopener noreferrer" class="portfolio-link">
+      <a href="https://rahatislamanik-spec.github.io/Cafe-Nimbus" target="_blank" rel="noopener noreferrer" class="portfolio-link">
         <div>
           <div class="portfolio-link-name">Café Nimbus</div>
-          <div class="portfolio-link-meta">AWS Five-Phase Architecture · Case Study</div>
+          <div class="portfolio-link-meta">AWS Five-Phase Architecture · Live Case Study</div>
         </div>
         <span class="portfolio-link-arrow">→</span>
       </a>
