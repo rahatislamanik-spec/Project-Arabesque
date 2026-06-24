@@ -1,3 +1,38 @@
+## Live Workflow Demonstrations
+
+### International Student IT Onboarding Request
+
+This Microsoft Form represents the intake process used in Project Arabesque.
+
+🔗 Live Form:
+https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=euv6MawKU0CWaC8szfWKu3Yg7c4vlClPiG39TcXeuiNUMlU0T0ZHM0VYQ1VVR01ET0czNllMU0xZUi4u
+
+The form demonstrates how student onboarding requests are captured and routed into the Microsoft 365 workflow described in this case study, including account provisioning, device assignment tracking, onboarding communications, and SharePoint-based lifecycle management.
+
+---
+
+### International Student IT Offboarding Request
+
+This Microsoft Form represents the offboarding process used in Project Arabesque.
+
+🔗 Live Form:
+https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=euv6MawKU0CWaC8szfWKu3Yg7c4vlClPiG39TcXeuiNUNk9aNVVESTMzWFIxVFJUQ0xHM1VWTkVaWS4u
+
+The form demonstrates how student departure requests are captured and routed into the Microsoft 365 offboarding workflow described in this case study, including account deactivation tracking, device recovery, access removal, workflow notifications, and lifecycle documentation.
+
+### Workflow Components Demonstrated
+
+* Microsoft Forms Intake
+* Power Automate Cloud Flows
+* SharePoint Online Tracking Lists
+* Office 365 Outlook Notifications
+* IT Asset Lifecycle Management
+* Workflow Audit Trail
+* Student Onboarding & Offboarding Processes
+* Microsoft 365 Operations and Governance
+
+
+
 # Project Arabesque — Microsoft 365 IT Automation
 > **Status:** Portfolio Complete — v1.0
 
